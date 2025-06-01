@@ -144,3 +144,30 @@ console.log(grades);
 // console.log(showListFemale);
 
 
+// Bai 12: Viết function sắp xếp thứ hạng học viên theo chiều giảm dần
+// const arangeGrades = (grades) =>{
+//     grades.sort((a,b) => b.grade - a.grade);
+// }
+// console.log(grades)
+
+// bai 13: Viết function lấy ra học viên Nữ có tên bắt đầu bằng “J”
+// const getNameFemale = (grades) =>{
+//     return grades.filter(student => student.sex === "F" && student.name.startsWith('J'))
+// }
+
+// const femaleStudent = getNameFemale(grades);
+// femaleStudent.forEach(student => {
+//     console.log(`Cac hoc vien nu co ten bat dau bang chu 'J' la: ${student.name}`);
+// });
+
+// Bai 14:
+const getTopFiveStudent  =(grades) =>{
+    const arr = grades.slice();
+    arr.sort((a, b) => a.grade - b.grade);
+    return arr.slice(0,5);
+}
+const topFive = getTopFiveStudent(grades);
+console.log("Top 5 hoc vien co thu hang cao nhat: ")
+topFive.forEach(student => {
+    console.log(`${student.name} - Grade: ${student.grade}`)
+});
